@@ -1,0 +1,15 @@
+{
+  "name": "google-maps",
+  "version": "1.0.0",
+  "description": "- https://gist.github.com/jaybobo/0097a1c9137edea4cf5fd9a200b32a1b",
+  "main": "app.js",
+  "scripts": {
+    "start": "http-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "http-server": "^0.11.1"
+  }
+}
