@@ -31,7 +31,19 @@
         </label>
       </li>
     </ul>
-  </div>
+
+    <h3>Delete Tasks</h3>
+    <ul>
+      <li v-for="task in deleted_tasks">
+          {{ task.name }}
+          <label>
+              Restore?
+              <input type="checkbox" v-model="task.is_deleted">
+            </label>
+      </li>
+    </ul>
+    </div>
+
 
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="./app.js"></script>

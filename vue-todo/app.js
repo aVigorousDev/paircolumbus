@@ -12,6 +12,9 @@ var app = new Vue({
     available_tasks() {
       return this.tasks.filter(task => !task.is_deleted);
     },
+    deleted_tasks() {
+      return this.tasks.filter(task => task.is_deleted);
+    },
   },
   methods: {
     add_task() {
