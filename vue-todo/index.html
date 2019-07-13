@@ -2,13 +2,34 @@
 <html>
 <head>
   <title>Vue-Todo</title>
+
+  <style>
+    .finished {
+      text-decoration: line-through;
+    }
+  </style>
 </head>
 <body>
   <div id="app">
-    <label>Task Description : </label><input type="text" name="task" v-model="new_task">
+    <h3>Create new Task</h3>
+    <label>
+      Task Description: <input type="text" name="task" v-model="new_task.name">
+    </label>
+    <label>
+      Completed?: <input type="checkbox" v-model="new_task.is_completed">
+    </label>
     <button name= "submit" v-on:click="add_task">submit</button>
+
+    <h3>Current Tasks</h3>
     <ul>
-      <li v-for="task in available_tasks">{{ task.name }}</li>
+      <li v-for="task in available_tasks">
+        <input type="checkbox" v-model="task.is_completed"> <span :class="{ finished: task.is_completed }">{{ task.name }}</span>
+        <br>
+        <label>
+          Delete?
+          <input type="checkbox" v-model="task.is_deleted">
+        </label>
+      </li>
     </ul>
   </div>
 
