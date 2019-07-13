@@ -5,6 +5,8 @@
 </head>
 <body>
   <div id="app">
+    <label>Task Description : </label><input type="text" name="task" v-model="new_task">
+    <button name= "submit" v-on:click="add_task">submit</button>
     <ul>
       <li v-for="task in available_tasks">{{ task.name }}</li>
     </ul>
