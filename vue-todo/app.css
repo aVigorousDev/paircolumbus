@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  font-family: arial;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+#app {
+  width: 100%;
+  max-width: 50rem;
+}
+
+.form-group {
+  display: block;
+}
+
+.box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.finished {
+  text-decoration: line-through;
+}

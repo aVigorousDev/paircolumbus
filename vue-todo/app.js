@@ -1,3 +1,5 @@
+const STORAGE_KEY = 'vue-todo';
+
 var app = new Vue({
   el: '#app',
 
@@ -28,6 +30,20 @@ var app = new Vue({
 
       this.new_task.name = '';
       this.new_task.is_completed = false;
-    }
-  }
+    },
+    delete_task(task) {
+      task.is_deleted = true;
+    },
+    restore_task(task) {
+      task.is_deleted = false;
+    },
+  },
+  created() {
+    let tasks = localStorage.getItem(STORAGE_KEY);
+
+    if (tasks) this.tasks = JSON.parse(tasks);
+  },
+  updated() {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(this.tasks));
+  },
 });
